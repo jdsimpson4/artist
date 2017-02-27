@@ -1,0 +1,15 @@
+<input type="text" ng-model="controller.search"/>
+<button class="btn btn-primary" ng-click="controller.doSearch()">Search</button>
+
+<table class="table table-striped">
+  <tr>
+    <th>Image</th>
+    <th>Name</th>
+    <th>Genres</th>
+  </tr>
+  <tr ng-repeat="artist in controller.artists.artists.items">
+    <td> <img ng-src="{{artist.images[0].url}}" height="100px" width="100px" /> </td>
+    <td> {{artist.name}} </td>
+    <td> <span ng-repeat="genre in artist.genres"> {{genre}} <br/></span></td>
+  </tr>
+</table>
